@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jgarridoExamen.RegistroPage"
+             Title="RegistroPage">
+    <VerticalStackLayout>
+        <Label x:Name="UsernameLabel" HorizontalOptions="End" VerticalOptions="Start"/>
+        <Label Text="REGISTRO" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" Grid.ColumnSpan="2" />
+        <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*">
+            <Label Text="Fecha:" Grid.Row="0" Grid.Column="0" />
+            <DatePicker x:Name="fechaDatePicker" Grid.Row="0" Grid.Column="1" />
+            <Label Text="Pais" Grid.Row="1" Grid.Column="0"/>
+            <Picker x:Name="paisPicker" Grid.Row="1" Grid.Column="1" Title="Seleccione pais">
+                <Picker.Items>
+                    <x:String>Ecuador</x:String>
+                    <x:String>Mexico</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Ciudad" Grid.Row="2" Grid.Column="0"/>
+            <Picker x:Name="ciudadPicker" Grid.Row="2" Grid.Column="1" Title="Seleccione ciudad">
+                <Picker.Items>
+                    <x:String>Quito</x:String>
+                    <x:String>Ciudad de Mexico</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Monto" Grid.Row="3" Grid.Column="0"/>
+            <Entry x:Name="montoInicialEntry" Grid.Row="3" Grid.Column="1" Placeholder="Monto Inicial" Keyboard="Numeric" />
+            <Label Text="P.Mensual" Grid.Row="4" Grid.Column="0"/>
+            <Entry x:Name="pagoMensualEntry" Grid.Row="4" Grid.Column="1" Placeholder="Pago mensual" IsEnabled="False" />
+        </Grid>
+        <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*">
+            <Label Text="Nombre" Grid.Row="0" Grid.Column="0"/>
+            <Entry x:Name="nombreEntry" Grid.Row="1" Grid.Column="0" />
+            <Label Text="Apellido" Grid.Row="0" Grid.Column="1" />
+            <Entry x:Name="apellidoEntry" Grid.Row="1" Grid.Column="1" />
+            <Label Text="Edad" Grid.Row="0" Grid.Column="2" />
+            <Entry x:Name="edadEntry" Grid.Row="1" Grid.Column="2" Keyboard="Numeric"/>
+        </Grid>
+        <Grid Grid.Row="5" ColumnDefinitions="*,*">
+            <Button x:Name="calcularPagoButton" Text="Calcular Pago mensual" Clicked="CalcularPagoButton_Clicked" Grid.Column="0" />
+            <Button x:Name="verResumenButton" Text="Ver Resumen" Clicked="VerResumenButton_Clicked" Grid.Column="1" />
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>
